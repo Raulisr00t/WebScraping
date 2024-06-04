@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CVE Search Result</title>
+    <style>
+      body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+}
+
+p {
+  color: #666;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+.error-message {
+            color: #ff0000;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background-color: #ffeeee; /* Change background color */
+            padding: 10px; /* Add padding */
+            border-radius: 5px; /* Add border radius */
+            border: 1px solid #ff0000; /* Add border */
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container">
+        
+        {% if error_message %}
+            <p class="error-message">{{ error_message }}</p>
+        {% else %}
+    
+        <h1>CVE Search Result for {{ cve_id }}</h1>
+    
+    <p><strong>Description:</strong> {{ summary }}</p>
+    <p><strong>CVSS Score:</strong> {{ cvss_score }}</p>
+    <p><strong>Vector:</strong> {{ vector }}</p>
+    
+    <ul>
+      {% for ref in references %}
+      <li>Reference 1 : <a href="{{ ref }}">{{ ref }}</a></li>
+      {% endfor %} {% for ref in referencesecond %}
+      <li>Reference 2 : <a href="{{ ref }}">{{ ref }}</a></li>
+      {% endfor %} {% for ref in referencethird %}
+      <li>Reference 3 : <a href="{{ ref }}">{{ ref }}</a></li>
+      {% endfor %}
+    
+    </ul>
+    <p><strong>CVE Link:</strong> <a href="{{ cve_link }}">{{ cve_id }}</a></p>
+    <p><strong>Published Date:</strong> {{ published_date }}</p>
+    <p><strong>Last Modified Date:</strong> {{ last_modified_date }}</p>
+    <p><strong>Source:</strong> {{ source }}</p>
+        {% endif %}
+
+    </div>
+  </body>
+</html>
