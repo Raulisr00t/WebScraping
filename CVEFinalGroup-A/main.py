@@ -40,7 +40,7 @@ def search_cve(url, details, output_format):
                 #                                                        #
                 #             GROUP(A)--JAMES FINAL PROJECT              #
                 #                                                        #
-                #  RAUL          ILHAM          MALEYKA            FUAD  #                                        
+                #                      Raulisr00t!                       #                 
                 ##########################################################   """'\n'
     print(title)
 
