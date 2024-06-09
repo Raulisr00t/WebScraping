@@ -38,7 +38,7 @@ signal.signal(signal.SIGINT, signal_handler)
 def search_cve(url, details, output_format):
     title = """                ##########################################################
                 #                                                        #
-                #             GROUP(A)--JAMES FINAL PROJECT              #
+                #             GROUP(A)--MY FINAL PROJECT              #
                 #                                                        #
                 #                      Raulisr00t!                       #                 
                 ##########################################################   """'\n'
